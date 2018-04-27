@@ -1,0 +1,18 @@
+#lang racket
+(require srfi/1)
+(require srfi/13)
+(require srfi/48)
+ 
+ 
+(define descriptions '((1 "You are in the mantion’s entrance, you see the toilets to the west and kitchen to the east and mantion’s hallway to the north")
+                       (2 "You are in the mantion’s toilet, you see the entrance to your west. ")
+                       (3 "You are in the mantion’s kitchen, you see the entrance to your east.")
+                       (4 "You are in the mantion’s hallway, you see the entrance to your south and living room to your north")
+                       (5 "You are in the mantion’s living room, you see the mantion’s hallway to your south and dining room to your east")
+                       (6 "You are in the mantion’s dining room, you see the living room to your west and games room to your north")
+                       (7 "You are in the games room, you see the dining room to your south and living room to your west")))
+(define look '(((directions) look) ((look) look) ((examine room) look)))
+(define quit '(((exit game) quit) ((quit game) quit) ((exit) quit) ((quit) quit)))
+(define actions `(,@look ,@quit))
+ 
+                        
